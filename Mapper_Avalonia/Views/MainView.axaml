@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Mapper_Avalonia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="400"
+             x:Class="Mapper_Avalonia.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<Border Background="WhiteSmoke">
+		<StackPanel>
+			<TextBlock x:Name="title" Text="Mapper" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" MinHeight="50"/>
+			<StackPanel>
+				<TextBlock HorizontalAlignment="Center">
+					<Label Content="Начало Диапазона" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,100,0" Background="WhiteSmoke"/>
+					<Label Content="Конец Диапазона" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" Background="WhiteSmoke"/>
+				</TextBlock>
+			</StackPanel>
+			<StackPanel>
+				<TextBlock HorizontalAlignment="Center">
+					<TextBox x:Name="tbStart1" MinWidth="100" FontSize="14" Margin="5,5,110,5" TextAlignment="Center" Text="0"/>
+					<TextBox x:Name="tbStop1" MinWidth="100" FontSize="14" Margin="5" TextAlignment="Center" Text="0"/>
+				</TextBlock>
+			</StackPanel>
+			<Label Content="Значение" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<TextBox x:Name="tbValueToMap" MaxWidth="100" FontSize="14" Margin="5" TextAlignment="Center" Text="0"/>
+			<Label Content="Результат"  FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<TextBox x:Name="tbResult" MaxWidth="100" FontSize="14" Margin="5" TextAlignment="Center" Text="0"/>
+			<StackPanel>
+				<TextBlock HorizontalAlignment="Center">
+					<Label Content="Начало Диапазона"  FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,100,0"/>
+					<Label Content="Конец Диапазона"  FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</TextBlock>
+			</StackPanel>
+			<StackPanel>
+				<TextBlock HorizontalAlignment="Center">
+					<TextBox x:Name="tbStart2" MinWidth="100" FontSize="14" Margin="5,5,110,5" TextAlignment="Center" Text="0"/>
+					<TextBox x:Name="tbStop2" MinWidth="100" FontSize="14" Margin="5" TextAlignment="Center" Text="0"/>
+				</TextBlock>
+			</StackPanel>
+			<Button x:Name="bMapping" Content="Map" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" MinHeight="40" ClickMode="Press"/>
+		</StackPanel>
+	</Border>
+</UserControl>
