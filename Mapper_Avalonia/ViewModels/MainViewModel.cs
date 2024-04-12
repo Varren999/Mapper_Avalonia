@@ -1,52 +1,53 @@
 ﻿using ReactiveUI;
 using System;
 using System.Reactive;
+using Log;
 
 namespace Mapper_Avalonia.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    private string start1;
-    private string stop1;
-    private string start2;
-    private string stop2;
-    private string valueToMap;
-    private string result;
+    private string start1 = "0";
+    private string stop1 = "10";
+    private string start2 = "4";
+    private string stop2 = "20";
+    private string valueToMap = "5";
+    private string result = "0";
 
     public string tbStart1
     {
         get => start1;
-        set => SetAndRaise(ref start1, value);
+        set => this.RaiseAndSetIfChanged(ref start1, value);
     }
 
     public string tbStop1
     {
         get => stop1;
-        set => SetAndRaise(ref stop1, value);
+        set => this.RaiseAndSetIfChanged(ref stop1, value);
     }
 
     public string tbStart2
     {
         get => start2;
-        set => SetAndRaise(ref start2, value);
+        set => this.RaiseAndSetIfChanged(ref start2, value);
     }
 
     public string tbStop2
     {
         get => stop2;
-        set => SetAndRaise(ref stop2, value);
+        set => this.RaiseAndSetIfChanged(ref stop2, value);
     }
 
     public string tbValueToMap
     {
         get => valueToMap;
-        set => SetAndRaise(ref valueToMap, value);
+        set => this.RaiseAndSetIfChanged(ref valueToMap, value);
     }
 
     public string tbResult
     {
         get => result;
-        set => SetAndRaise(ref result, value);
+        set => this.RaiseAndSetIfChanged(ref result, value);
     }
 
     public ReactiveCommand<Unit, Unit> bMapping { get; }
@@ -64,7 +65,7 @@ public class MainViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            //Logger.Error("bMaping_Click: " + ex);
+            Logger.Error("bMaping_Click: " + ex);
         }
     }
 
