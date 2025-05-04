@@ -1,11 +1,10 @@
-﻿using System;
-
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.ReactiveUI;
+using System;
 
-namespace Mapper_Avalonia.Desktop;
+namespace Mapper_Avalonia;
 
-class Program
+sealed class Program
 {
     // Initialization code. Don't use any Avalonia, third-party APIs or any
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized

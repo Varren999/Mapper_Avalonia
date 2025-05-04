@@ -1,7 +1,6 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-
 using Mapper_Avalonia.ViewModels;
 using Mapper_Avalonia.Views;
 
@@ -20,17 +19,11 @@ public partial class App : Application
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel()
-            };
-        }
-        else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
-        {
-            singleViewPlatform.MainView = new MainView
-            {
-                DataContext = new MainViewModel()
+                DataContext = new MainWindowViewModel(),
             };
         }
 
         base.OnFrameworkInitializationCompleted();
     }
+
 }
